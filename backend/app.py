@@ -3,6 +3,7 @@ from flask_cors import CORS
 import pandas as pd
 import numpy as np
 
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for frontend communication
 
@@ -147,7 +148,11 @@ def analyze_teams():
             return jsonify({'error': 'Both team names are required'}), 400
             
         # Read match data - Update this path to your actual data file location
-        match_data = pd.read_csv(r"C:\\Users\\ASUS\\Downloads\\first_28_matches.csv")
+        
+
+        file_url = r"https://drive.google.com/uc?export=download&id=1hUcdLAE2SAzuBE3CgD9CtVbI3S4VclI6"  # Replace FILE_ID with the file ID from the shareable link
+        match_data = pd.read_csv(file_url)
+
         
         # Calculate player scores
         player_stats = calculate_player_scores(match_data, team1, team2)
