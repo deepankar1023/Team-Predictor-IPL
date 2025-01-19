@@ -14,7 +14,7 @@ function App() {
   const handleAnalyze = async () => {
     setLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/analyze-teams", {
+      const response = await axios.post("https://team-predictor-ipl.onrender.com/analyze-teams", {
         team1,
         team2,
       });
